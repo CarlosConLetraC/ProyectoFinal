@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Mini IDE con ACE + Auth</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ===== AUTH ===== -->
+<div id="authView">
+  <h2>Iniciar sesión</h2>
+  <input id="username" placeholder="Usuario">
+  <input id="password" type="password" placeholder="Contraseña">
+  <button id="loginBtn" type="button">Entrar</button>
+  <button id="registerBtn" type="button">Registrar</button>
+  <div id="authMsg"></div>
+</div>
+
+<!-- ===== IDE ===== -->
+<div id="ideContainer">
+  <div id="fileExplorer">
+    <div class="explorer-header">EXPLORADOR</div>
+    <div id="explorerTree"></div>
+  </div>
+
+  <div id="ideView">
+    <div id="topbar">
+      Lenguaje:
+      <select id="languageSelect">
+        <option value="lua">Lua</option>
+        <option value="c_cpp_c">C</option>
+        <option value="c_cpp_cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="ruby">Ruby</option>
+      </select>
+      <button id="statsButton">Ver estadísticas</button>
+      <button id="dbStatsButton">Uso DB</button>
+      <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+
+    <div id="tabs">
+      <div id="addTab">+</div>
+    </div>
+
+    <div id="editor"></div>
+    <div id="statusBar">
+      <span id="statusUser"></span>
+      <span id="statusCPU"></span>
+      <span id="statusRAM"></span>
+      <span id="statusUptime"></span>
+      
+      <!-- MariaDB -->
+      <span id="statusMariaCPU"></span>
+      <span id="statusMariaRAM"></span>
+      <span id="statusMariaUptime"></span>
+    </div>
+    
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.3/ace.js"></script>
+<script src="binding.js" type="module" defer></script>
+</body>
+</html>

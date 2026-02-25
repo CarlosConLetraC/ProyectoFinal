@@ -102,7 +102,6 @@ function closeTab(key, skipSavePrompt = false) {
   const tab = openTabs.get(key);
   if (!tab) return;
 
-  // ⚡ Solo preguntar si es dirty y no se indica skip
   if (!skipSavePrompt && tab.dirty && !tab.temporary) {
     const saveBeforeClose = confirm(
       `¿Deseas guardar los cambios en "${tab.name}" antes de cerrar?`
@@ -850,4 +849,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
   checkSession();
   setInterval(updateHardwareStatus, 1500);
+
 });

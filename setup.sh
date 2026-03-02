@@ -2,7 +2,7 @@
 set -e
 
 USER_NAME="${SUDO_USER:-$USER}"
-echo "=== CONFIGURACIÓN PROYECTO FINAL (WSL) ==="
+echo "=== CONFIGURACIÓN PROYECTO FINAL==="
 
 # =============================
 # 1. SISTEMA BASE

@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.tree-item.active {
+  background: #094771;
+}
+
+#statusBar {
+  height: 28px;
+  background: #1e1e1e;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  font-size: 13px;
+  border-top: 1px solid #333;
+}
+
+#statusBar span {
+  margin-right: 20px;
+}
+
+/* ===== AUTH ===== */
+#authView {
+  max-width: 360px;
+  margin: 120px auto;
+  padding: 24px;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+}
+#authView input, #authView button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 16px;
+  margin-top: 12px;
+}
+#authView button { cursor: pointer; }
+#authMsg { margin-top: 10px; color: orange; }
+
+/* ===== IDE ===== */
+#ideContainer {
+  display: flex;          /* Ya lo tienes así */
+  flex-direction: row;
+  height: 100vh;          /* Asegura que tenga toda la altura visible */
+  width: 100vw;           /* Asegura que ocupe toda la anchura */
+  overflow: hidden;       /* Evita scroll no deseado */
+}
+
+#fileExplorer {
+  width: 300px;
+  background: #2d2d2d;
+  color: white;
+  overflow-y: auto;
+  height: 100vh;          /* Que ocupe toda la altura */
+}
+
+#ideView {
+  flex: 1;                /* Ocupa todo el espacio restante */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;          /* Altura completa */
+}
+
+#editor {
+  flex: 1;                /* Ocupa todo el espacio disponible */
+  min-width: 0;           /* Para que el flex no se rompa */
+  min-height: 0;
+}
+
+#topbar {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  color: white;
+  padding: 5px 10px;
+}
+
+#languageSelect { margin-left: 10px; padding: 5px; }
+
+#statsButton {
+  margin-left: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+#dbStatsButton {
+  margin-left: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: orange;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+#logoutBtn { margin-left: auto; }
+
+#tabs {
+  display: flex;
+  background: #2d2d2d;
+  align-items: center;
+}
+
+.tab {
+  padding: 12px 24px;
+  color: white;
+  cursor: pointer;
+  background: #3a3a3a;
+  margin-right: 2px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  font-family: Consolas;
+  font-size: 18px;
+}
+
+.tab.active {
+  background: #1e1e1e;
+  border-bottom: 2px solid orange;
+}
+
+.tab span {
+  margin-left: 8px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+#addTab { padding: 8px 12px; cursor: pointer; color: white; }
+
+/* ===== Explorer ===== */
+#fileExplorer {
+  width: 280px;
+  background: #252526;
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.explorer-header {
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  color: #bbbbbb;
+  border-bottom: 1px solid #333;
+}
+
+.tree {
+  padding: 6px;
+}
+
+.tree-item {
+  padding: 4px 6px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.tree-item:hover {
+  background: #373737;
+}
+
+.tree-item.root {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.tree-item .icon {
+  width: 18px;
+  text-align: center;
+  margin-right: 6px;
+}
+
+.tree-children {
+  margin-left: 16px;
+  display: none;
+}
+
+.tree-children.open {
+  display: block;
+}

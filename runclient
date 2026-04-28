@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ "$PWD/plugins/*" = $dir ]]; then
+	luajit -l import/init "$@"
+else
+	PLUGINS=()
+	for dir in "$PWD"/plugins/*; do
+		strsize=$((${#dir} - 1))
+		if [[ "${dir:0:1}" == "." || "${dir:strsize}" == "*" ]]; then 
+			continue
+		fi
+		dir_name=$(basename "$dir")
+		dir_name="${dir_name%????}"
+		PLUGINS+=("-l" "plugins/$dir_name")
+	done
+
+	luajit -l import/init "${PLUGINS[@]}" "$@"
+fi

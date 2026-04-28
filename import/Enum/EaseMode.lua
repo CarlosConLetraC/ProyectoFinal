@@ -1,0 +1,5 @@
+return {
+	"In",
+	"InOut",
+	"Out"
+}
